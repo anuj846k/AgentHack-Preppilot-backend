@@ -17,6 +17,9 @@ This manual process is not only time-consuming but also prone to missing importa
 
 ## Overview
 
+![Homepage](./homepage.png)
+
+
 PrepPilot is an intelligent meeting preparation system that automatically researches attendees, analyzes their professional backgrounds, and generates comprehensive meeting preparation documents. The system combines multiple data sources including LinkedIn profiles, GitHub contributions, and real-time web search to create detailed attendee profiles and meeting insights.
 
 ## Architecture
@@ -29,8 +32,7 @@ The system is built using FastAPI and consists of several specialized tools that
 ![Slide3 ](./main-3.png)
 ![Slide3 ](./main-4.png)
 
-### Get message on Discord after redeploy
-![Slide4 ](./Images/Slide4.png)
+
 
 ## Tool Components
 
