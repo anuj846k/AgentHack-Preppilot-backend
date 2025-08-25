@@ -23,6 +23,7 @@ This manual process is not only time-consuming but also prone to missing importa
 
 ### Frontend Repo : https://github.com/anuj846k/preppilot-frontend
 
+### Presentation Canva : https://www.canva.com/design/DAGxAFy4ljw/tZGYa_TM5SzYmh66YmUZQw/edit?utm_content=DAGxAFy4ljw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ### Youtube Link : https://www.youtube.com/watch?v=xoYyi99kFC0
 
