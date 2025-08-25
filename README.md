@@ -19,6 +19,12 @@ This manual process is not only time-consuming but also prone to missing importa
 
 ![Homepage](./homepage.png)
 
+### Live url : https://preppilot-frontend.vercel.app/
+
+### Frontend Repo : https://github.com/anuj846k/preppilot-frontend
+
+
+### Youtube Link : https://www.youtube.com/watch?v=xoYyi99kFC0
 
 PrepPilot is an intelligent meeting preparation system that automatically researches attendees, analyzes their professional backgrounds, and generates comprehensive meeting preparation documents. The system combines multiple data sources including LinkedIn profiles, GitHub contributions, and real-time web search to create detailed attendee profiles and meeting insights.
 
@@ -27,12 +33,11 @@ PrepPilot is an intelligent meeting preparation system that automatically resear
 The system is built using FastAPI and consists of several specialized tools that work together to create a comprehensive meeting preparation workflow. Each tool is designed to handle a specific aspect of attendee research and document generation.
 
 ## COMPLETE FLOW:
+
 ![Main idea](./main-1.png)
 ![Slide2 ](./main-2.png)
 ![Slide3 ](./main-3.png)
 ![Slide3 ](./main-4.png)
-
-
 
 ## Tool Components
 
@@ -41,6 +46,7 @@ The system is built using FastAPI and consists of several specialized tools that
 **Purpose**: Extracts meeting information and attendee details from email data using Portia's AI planning system.
 
 **Key Features**:
+
 - Processes email data to identify meeting attendees
 - Extracts attendee names and email addresses
 - Generates email summaries for each attendee
@@ -48,6 +54,7 @@ The system is built using FastAPI and consists of several specialized tools that
 - Handles edge cases like missing names by deriving them from email addresses
 
 **Technical Implementation**:
+
 - Uses Portia's PlanBuilderV2 for structured data extraction
 - Implements Pydantic models for data validation
 - Includes error handling for malformed data
@@ -60,6 +67,7 @@ The system is built using FastAPI and consists of several specialized tools that
 **Purpose**: Enhances attendee data by researching their LinkedIn profiles and professional backgrounds.
 
 **Key Features**:
+
 - Generates targeted LinkedIn search queries for each attendee
 - Extracts LinkedIn profile URLs from search results
 - Fetches comprehensive profile data including work history, education, skills
@@ -67,6 +75,7 @@ The system is built using FastAPI and consists of several specialized tools that
 - Implements intelligent URL filtering and deduplication
 
 **Technical Implementation**:
+
 - Uses Portia's MCP (Model Context Protocol) for web search
 - Integrates with Apify's LinkedIn scraper for profile data
 - Implements robust error handling for failed enrichments
@@ -79,6 +88,7 @@ The system is built using FastAPI and consists of several specialized tools that
 **Purpose**: Analyzes GitHub profiles to understand technical skills, contributions, and project history.
 
 **Key Features**:
+
 - Fetches comprehensive GitHub profile data using Apify's scraper
 - Analyzes pinned repositories and contribution patterns
 - Extracts technical skills and programming languages
@@ -86,6 +96,7 @@ The system is built using FastAPI and consists of several specialized tools that
 - Provides insights into coding activity and expertise areas
 
 **Technical Implementation**:
+
 - Uses Apify's GitHub profile scraper via MCP
 - Implements username validation and URL construction
 - Handles rate limiting and API errors gracefully
@@ -98,6 +109,7 @@ The system is built using FastAPI and consists of several specialized tools that
 **Purpose**: Intelligently identifies and extracts GitHub URLs from attendee data.
 
 **Key Features**:
+
 - Scans attendee profiles for GitHub URLs
 - Uses keyword matching to identify technical professionals
 - Filters for relevant engineering and development roles
@@ -105,6 +117,7 @@ The system is built using FastAPI and consists of several specialized tools that
 - Provides fallback mechanisms for missing data
 
 **Technical Implementation**:
+
 - Uses regex patterns to identify GitHub URLs
 - Implements keyword-based filtering for technical roles
 - Handles both direct URLs and embedded links
@@ -117,12 +130,14 @@ The system is built using FastAPI and consists of several specialized tools that
 **Purpose**: Provides real-time web search capabilities for additional context and information.
 
 **Key Features**:
+
 - Integrates with Perplexity API for intelligent web search
 - Searches for company news, industry trends, and recent developments
 - Provides context-aware search results
 - Handles complex queries and returns structured data
 
 **Technical Implementation**:
+
 - Uses Perplexity's MCP server for search functionality
 - Implements query processing and result parsing
 - Handles API rate limiting and error responses
@@ -135,6 +150,7 @@ The system is built using FastAPI and consists of several specialized tools that
 **Purpose**: Generates comprehensive meeting preparation documents from all collected data.
 
 **Key Features**:
+
 - Creates structured markdown documents
 - Organizes information into logical sections
 - Includes meeting overview, attendee profiles, and insights
@@ -142,6 +158,7 @@ The system is built using FastAPI and consists of several specialized tools that
 - Identifies collaboration opportunities
 
 **Technical Implementation**:
+
 - Uses OpenAI's GPT models for intelligent document generation
 - Implements structured prompts for consistent formatting
 - Handles large datasets and complex information
@@ -154,6 +171,7 @@ The system is built using FastAPI and consists of several specialized tools that
 **Purpose**: Converts markdown documents into formatted Google Docs for easy sharing and collaboration.
 
 **Key Features**:
+
 - Creates Google Docs with proper formatting
 - Converts markdown headers to document styles
 - Handles bullet points, tables, and text formatting
@@ -161,6 +179,7 @@ The system is built using FastAPI and consists of several specialized tools that
 - Provides direct sharing links
 
 **Technical Implementation**:
+
 - Uses Google Docs API for document creation
 - Implements OAuth2 authentication flow
 - Handles markdown-to-document conversion
@@ -224,6 +243,10 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Before testing:
+
+Create an event in the google calender to fetch the event from add some 2-3 people in the meeting along with the title and date .FOR date it should exact same day testing for
+
 ### Step 2: Configure API Keys
 
 Create a `.env` file in the `preppilot` directory with the following API keys:
@@ -236,10 +259,7 @@ APIFY_TOKEN=your_apify_token_here
 PORTIA_API_KEY=your_portia_api_key_here
 ```
 
-
-
 **Note**: For the hackathon evaluation period, I have included pre-configured LinkedIn cookies and Google credentials files to make reproduction easier for judges. These files will be removed after the hackathon winners are announced for security reasons.
-
 
 ### Step 3: Setup Google OAuth2
 
@@ -254,7 +274,6 @@ PORTIA_API_KEY=your_portia_api_key_here
 
 The project includes pre-configured LinkedIn cookies in `combinedTools/linkedin_cookies.json`. These cookies are already set up for the demo and should work out of the box.
 If not you can download cookie-editor extension to download cookie to allow the apify this actor to use those cookie as a json.
-
 
 ### Step 5: Run the Application
 
@@ -283,34 +302,41 @@ curl -X POST http://localhost:8000/run-full-meeting-workflow
 ## API Keys Required
 
 ### 1. OpenAI API Key
+
 - **Purpose**: AI-powered document generation and text processing
 - **How to get**: Sign up at [OpenAI Platform](https://platform.openai.com/)
 - **Cost**: Pay-per-use, typically $0.01-0.10 per request
 
 ### 2. Perplexity API Key
+
 - **Purpose**: Real-time web search for additional context
 - **How to get**: Sign up at [Perplexity API](https://www.perplexity.ai/api)
 - **Cost**: Free tier available, paid plans for higher usage
 
 ### 3. Apify Token
+
 - **Purpose**: LinkedIn and GitHub data extraction
 - **How to get**: Sign up at [Apify](https://apify.com/) and get your API token
 - **Cost**: Free tier available, paid plans for higher usage
 
 ### 4. Portia API Key
+
 - **Purpose**: AI planning and orchestration
 - **How to get**: Sign up at [Portia AI](https://portialabs.ai/)
 - **Cost**: Free tier available, paid plans for higher usage
 
 ### 5. Google OAuth2 Credentials
+
 - **Purpose**: Google Docs integration
-- **How to get**: 
+- **How to get**:
+
   1. Go to [Google Cloud Console](https://console.cloud.google.com/)
   2. Create a new project
   3. Enable Google Docs API
   4. Create OAuth2 credentials
 
   5. Download credentials.json
+
 - **Cost**: Free for personal use, quotas apply
 
 **Note**: For the hackathon evaluation period, I have included pre-configured LinkedIn cookies and Google credentials files to make reproduction easier for judges. These files will be removed after the hackathon winners are announced for security reasons.
@@ -322,7 +348,6 @@ For detailed logging, run with debug mode:
 ```bash
 uvicorn endpoints:app --reload --log-level debug
 ```
-
 
 ## Deployment
 
