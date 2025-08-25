@@ -351,6 +351,6 @@ uvicorn endpoints:app --reload --log-level debug
 
 ## Deployment
 
-The system is deployed on platform Rendor which is on free tier pls wait 30s to cold start it first time.
+The system is deployed on platform Railway for the backend and vercel for the frontend
 
 This comprehensive toolset provides a complete solution for automated meeting preparation, combining multiple data sources and AI capabilities to create detailed, actionable meeting preparation documents.
