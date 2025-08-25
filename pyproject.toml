@@ -1,0 +1,15 @@
+[project]
+name = "preppilot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.116.1",
+    "google-api-python-client>=2.179.0",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.2",
+    "portia-sdk-python[google]>=0.7.2",
+    "requests>=2.32.5",
+    "uvicorn>=0.35.0",
+]
