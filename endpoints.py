@@ -20,7 +20,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=["http://localhost:3000", "https://preppilot-frontend.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -106,12 +106,12 @@ def search_company_news_api(req: SearchRequest):
 
 @app.post("/create-docs")
 def create_docs_api(req: DocsRequest):
-     if req.search_markdown:
+    if req.search_markdown:
         combined_markdown = req.markdown + "\n\n" + req.search_markdown
-     else:
+    else:
         combined_markdown = req.markdown
-     doc_url = create_google_docs_summary(combined_markdown)
-     return {"doc_url": doc_url}
+    doc_url = create_google_docs_summary(combined_markdown)
+    return {"doc_url": doc_url}
 
 
 # @app.get("/proxy-image")
