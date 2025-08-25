@@ -11,5 +11,5 @@ dependencies = [
     "google-auth-oauthlib>=1.2.2",
     "portia-sdk-python[google]>=0.7.2",
     "requests>=2.32.5",
-    "uvicorn>=0.23.0",
+    "uvicorn>=0.35.0",
 ]
