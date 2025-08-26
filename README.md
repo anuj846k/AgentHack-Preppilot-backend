@@ -320,6 +320,8 @@ curl -X POST http://localhost:8000/run-full-meeting-workflow
 - **How to get**: Sign up at [Apify](https://apify.com/) and get your API token
 - **Cost**: Free tier available, paid plans for higher usage
 
+- **Enable/ RENT two actors IMPORTANT** : curious_coder/linkedin-profile-scraper  and saswave/github-profile-scraper
+
 ### 4. Portia API Key
 
 - **Purpose**: AI planning and orchestration
